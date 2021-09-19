@@ -5,7 +5,7 @@ export default ({ children, ...props }) => (
   <HTMLDocument
     title="VCard-test"
     scripts={['/app.js']}
-    stylesheets={['/static/css/bootstrap.min.css', '/static/css/main.css']}
+    stylesheets={['/css/bootstrap.min.css', '/css/main.css']}
     {...props}
   >
     {children}
