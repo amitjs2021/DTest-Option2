@@ -10,17 +10,22 @@ import App from "../src/App";
 import HCard from '../app/hcard'
 import render from '../app/render.js'
 import submit from '../app/submit'
+import update from '../app/update'
+
 
 const PORT = 8000;
 
 const app = express();
 app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 
 // app.use('/', render)
 
 app.use("/submit", submit)
-
-// happy path render
+app.use('/update', update)
 
 app.use("^/$", (req, res, next) => {
   fs.readFile(path.resolve("./static/index.html"), "utf-8", (err, data) => {
