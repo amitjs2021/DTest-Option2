@@ -1,14 +1,24 @@
-import React, { useState } from "react";
-import { hot } from "react-hot-loader/root";
-import "./styles/styles.css";
+import React from "react";
+import "./App.css";
 
-const App = () => {
+function App() {
+  const [count, setCount] = React.useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
 
   return (
     <>
-      <h1>Hello from app for SSR testing</h1>
+      <p>{count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
     </>
   );
-};
+}
 
-export default hot(App);
+export default App;
