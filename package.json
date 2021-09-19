@@ -6,10 +6,14 @@
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
     "@babel/register": "^7.7.0",
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "ignore-styles": "^5.0.1",
+    "node-persist": "^3.1.0",
+    "nodemon": "^2.0.12",
     "react": "15",
     "react-dom": "15",
+    "react-html-document": "^3.1.0",
     "react-scripts": "3.2.0"
   },
   "scripts": {
@@ -17,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "ssr": "node server/index.js"
+    "ssr": "nodemon node server/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
