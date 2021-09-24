@@ -8,7 +8,7 @@ const find = (id) => (
 
 console.log("before save :::: ")
 const save = (id, data) => {
-  console.log("DATA :::: ", data)
+  console.log("DATA :::: ", id, data)
   return (
     storage.setItem(id, data).then(() => ({ id, ...data }))
 

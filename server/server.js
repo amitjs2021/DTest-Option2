@@ -20,6 +20,10 @@ import update from '../app/update'
 const PORT = 8000;
 
 const app = express();
+app.use(function (req, res, next) {
+  res.removeHeader("X-Powered-By");
+  next();
+});
 app.use(cookieParser());
 app.use(express.json());
 
@@ -32,25 +36,6 @@ app.use(express.static('static', { index: false }));
 app.use("/submit", submit)
 app.use('/update', update)
 app.use('/', render)
-
-
-//happy path 
-// app.use("^/$", (req, res, next) => {
-//   fs.readFile(path.resolve("./static/index.html"), "utf-8", (err, data) => {
-//     if (err) {
-//       console.log(err);
-//       return res.status(500).send("Some error happened");
-//     }
-//     return res.send(
-//       data.replace(
-//         '<div id="root"></div>',
-//         `<div id="root">${<HCard />}</div > `
-//       )
-//     );
-//   });
-// });
-
-
 
 app.listen(PORT, () => {
   console.log(`App launched on http://localhost:${PORT}`);
