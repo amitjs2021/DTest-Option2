@@ -21,12 +21,13 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
-app.use(express.static('static'));
+app.use(express.static('static', { index: false }));
 
-app.use('/', render)
 
 app.use("/submit", submit)
+
 app.use('/update', update)
+app.use('/', render)
 
 
 //happy path 
