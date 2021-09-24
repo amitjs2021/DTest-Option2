@@ -19,20 +19,6 @@ import { find } from './db';
 // };
 
 
-// export default (req, res) => {
-//   console.log("HTML  ::", HTML)
-//   const content = renderToString(
-//     <HTML universalState={hCardProps}>
-//       <HCard {...hCardProps} />
-//     </HTML>
-//   );
-//   return (res.write(content))
-
-// }
-
-
-
-
 export default (req, res) => {
   return (
     find(req.cookies.user)
