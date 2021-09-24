@@ -6,9 +6,7 @@ const find = (id) => (
   storage.getItem(id)
 );
 
-console.log("before save :::: ")
 const save = (id, data) => {
-  console.log("DATA :::: ", id, data)
   return (
     storage.setItem(id, data).then(() => ({ id, ...data }))
 

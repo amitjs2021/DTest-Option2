@@ -20,11 +20,11 @@ import { find } from './db';
 
 
 export default (req, res) => {
+  console.log("req.session :: ", req.session)
   return (
     find(req.cookies.user)
       .then(state => {
         const content = renderToStaticMarkup(
-
           <HTMLDocument
             title="VCard-test"
             scripts={['/app.js']}
