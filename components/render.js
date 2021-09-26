@@ -4,7 +4,7 @@ import HTMLDocument from 'react-html-document';
 import HCard from './hcard';
 import { find } from './db';
 
-//hardcoded state for testing resonse
+//hardcoded state for testing response
 // var hCardProps = {
 //   givenName: 'Amit',
 //   surname: 'Fairfax',

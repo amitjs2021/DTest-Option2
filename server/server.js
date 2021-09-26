@@ -12,12 +12,12 @@ import ReactDOMServer from "react-dom/server";
 
 //testing code here 
 import App from "../src/App";
-import HCard from '../app/hcard'
+import HCard from '../components/hcard'
 
 // react SSR code from here 
-import render from '../app/render.js'
-import submit from '../app/submit'
-import update from '../app/update'
+import render from '../components/render.js'
+import submit from '../components/submit'
+import update from '../components/update'
 
 const PORT = process.env.PORT || 8000;
 
