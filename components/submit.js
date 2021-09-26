@@ -6,7 +6,7 @@ export default (req, res) => {
   // console.log("req.body  :", req.body)
 
   save(req.sessionID, req.body).then(({ id }) => {
-    res.cookie('user', id);
+    // res.cookie('user', id);
     res.redirect('/');
   });
 };

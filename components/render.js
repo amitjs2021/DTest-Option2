@@ -22,7 +22,7 @@ import { find } from './db';
 export default (req, res) => {
   console.log("req.session :: ", req.sessionID)
   return (
-    find(req.sessionID)
+    find(req.sessionID) //searching by session ID now 
       .then(state => {
         const content = renderToStaticMarkup(
           <HTMLDocument

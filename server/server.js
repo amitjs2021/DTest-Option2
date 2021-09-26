@@ -34,7 +34,7 @@ app.use(session({
 }))
 
 
-app.use(cookieParser());
+// app.use(cookieParser());
 //for request
 app.use(express.json());
 
