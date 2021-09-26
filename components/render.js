@@ -20,7 +20,7 @@ import { find } from './db';
 
 
 export default (req, res) => {
-  console.log("req.session :: ", req.session)
+  console.log("req.session :: ", req.sessionID)
   return (
     find(req.cookies.user)
       .then(state => {

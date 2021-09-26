@@ -14,7 +14,7 @@ import ReactDOMServer from "react-dom/server";
 import App from "../src/App";
 import HCard from '../components/hcard'
 
-// react SSR code from here 
+// react SSR routes code from here 
 import render from '../components/render.js'
 import submit from '../components/submit'
 import update from '../components/update'
@@ -24,15 +24,13 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 
 //for securing general headers
-// app.use(helmet())
+app.use(helmet.hidePoweredBy());
 
 //creating session object - will use if require
-app.set('trust proxy', 1) // trust first proxy
 app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
+  secret: 'vCard',
+  cookie: { maxAge: 30000 },
   saveUninitialized: true,
-  cookie: { secure: true }
 }))
 
 
@@ -47,9 +45,11 @@ app.use(express.urlencoded({
 
 //set assests on root level
 app.use(express.static('static', { index: false }));
-app.use("/submit", submit)
-app.use('/update', update)
-app.use('/', render)
+
+//more logical rountes give clear picture what is going on 
+app.post("/submit", submit)
+app.put('/update', update)
+app.get('/', render)
 
 
 app.listen(PORT, () => {
